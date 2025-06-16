@@ -2,12 +2,27 @@ name: Greetings from GitHub Actions
 
 on:
     workflow_dispatch:
+        inputs:
+            action:
+                type: choice
+                description: language
+                required: true
+                options:
+                - all
+                - EN
+                - ES
+                default: all
 
 jobs:
     display-greetings:
-        name: Display Greetings
+        name: Display Greeting (${inputs.language})
         runs-on: ubuntu-24.04
         steps:
             - name: Say Hello
+              if: inputs.language == 'all' || inputs.language == 'EN'
               run: |
                 echo "Hello World!"
+            - name: Di hola
+              if: inputs.language == 'all' || inputs.language == 'ES'
+              run: |
+                echo "U+00a1Hola Mundo!"
