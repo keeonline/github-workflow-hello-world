@@ -1,4 +1,4 @@
-name: On Push to Main Branch
+name: On Push to Feature Branch
 
 on:
     push:
@@ -7,8 +7,8 @@ on:
             - '**'
 
 jobs:
-    main-branch-push:
-        name: Main Push
+    feature-branch-push:
+        name: Feature Push
         runs-on: ubuntu-24.04
         steps:
             - name: Show context
