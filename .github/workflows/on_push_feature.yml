@@ -3,8 +3,8 @@ name: On Push to Feature Branch
 on:
     push:
         branches:
-            - '!main'
             - '**'
+            - '!main'
 
 jobs:
     feature-branch-push:
