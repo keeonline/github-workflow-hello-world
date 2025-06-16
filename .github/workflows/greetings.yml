@@ -15,7 +15,7 @@ on:
 
 jobs:
     display-greetings:
-        name: Display Greeting (${inputs.language})
+        name: Display Greetings
         runs-on: ubuntu-24.04
         steps:
             - name: Say hello
