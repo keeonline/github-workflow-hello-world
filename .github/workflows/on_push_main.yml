@@ -1,0 +1,26 @@
+name: On Push to Main Branch
+
+on:
+    push:
+        branches:
+            - main
+
+jobs:
+    main-branch-push:
+        name: Main Push
+        runs-on: ubuntu-24.04
+        permissions:
+            contents: write
+        steps:
+            - name: Checkout sources
+              uses: actions/checkout@v4
+              with:
+                fetch-depth: 0
+
+            - name: Get the semantic version values for the repo
+              id: semantic
+              uses: paulhatch/semantic-version@v5.4.0
+
+            - name: Show outputs
+              run: |
+                echo "github_ref=${{steps.semantic.outputs.version_tag}}"
