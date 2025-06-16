@@ -19,10 +19,12 @@ jobs:
         runs-on: ubuntu-24.04
         steps:
             - name: Say hello
+              shell: bash
               if: inputs.language == 'all' || inputs.language == 'EN'
               run: |
                 echo "Hello World!"
             - name: Di hola
+              shell: bash
               if: inputs.language == 'all' || inputs.language == 'ES'
               run: |
                 echo "\u+00a1Hola Mundo!"
