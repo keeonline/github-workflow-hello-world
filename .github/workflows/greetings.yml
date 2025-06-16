@@ -27,4 +27,4 @@ jobs:
               shell: bash
               if: inputs.language == 'all' || inputs.language == 'ES'
               run: |
-                echo "\u+00a1Hola Mundo!"
+                echo -e "\u+00a1Hola Mundo!"
