@@ -25,4 +25,4 @@ jobs:
             - name: Di hola
               if: inputs.language == 'all' || inputs.language == 'ES'
               run: |
-                echo "U+00a1Hola Mundo!"
+                echo "\u+00a1Hola Mundo!"
